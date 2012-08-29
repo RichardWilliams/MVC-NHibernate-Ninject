@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MvcApplication1.Models.ProductViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+
+@{
+    var grid = new WebGrid(Model);
+}
+
+@grid.GetHtml()
