@@ -7,7 +7,7 @@ namespace Core.Mappings
     {
         public StoreMap()
         {
-            Id(x => x.Id);
+            Id(x => x.Id).GeneratedBy.GuidComb();
             Map(x => x.Name);
             HasMany(x => x.Employees)
                 .Inverse()

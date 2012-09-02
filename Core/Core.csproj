@@ -72,7 +72,7 @@
     <Compile Include="Mappings\ProductMap.cs" />
     <Compile Include="Mappings\StoreMap.cs" />
     <Compile Include="NHibernate\NHibernateBuilder.cs" />
-    <Compile Include="NHibernate\PostGreDatabaseConfigurer.cs" />
+    <Compile Include="NHibernate\PostgreDatabaseConfigurer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NHibernate\SQliteDatabaseConfigurer.cs" />
   </ItemGroup>

@@ -8,7 +8,7 @@ namespace Core.NHibernate
     {
         public IPersistenceConfigurer Configurer()
         {
-            return PostgreSQLConfiguration.Standard.ConnectionString("Server=127.0.0.1;Port=5432;Database=MVCApp1;User Id=mvcuser;Password=mvcpassword;");
+            return PostgreSQLConfiguration.PostgreSQL82.ConnectionString("Server=127.0.0.1;Port=5432;Database=MVCApp1;User Id=mvcuser;Password=mvcpassword;");
         }
 
         public void BuildSchema(Configuration configuration)

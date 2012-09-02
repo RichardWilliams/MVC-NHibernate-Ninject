@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 
 namespace DomainModel
 {
     public class Store
     {
-        public virtual int Id { get; protected set; }
+        public virtual Guid Id { get; protected set; }
         public virtual string Name { get; set; }
         public virtual IList<Product> Products { get; set; }
         public virtual IList<Employee> Employees { get; set; }

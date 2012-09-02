@@ -7,7 +7,7 @@ namespace Core.Mappings
     {
         public ProductMap()
         {
-            Id(x => x.Id);
+            Id(x => x.Id).GeneratedBy.GuidComb();
             Map(x => x.Name);
             Map(x => x.Price);
             HasManyToMany(x => x.StoresStockedIn)

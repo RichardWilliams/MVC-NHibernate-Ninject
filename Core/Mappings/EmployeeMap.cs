@@ -7,7 +7,7 @@ namespace Core.Mappings
     {
         public EmployeeMap()
         {
-            Id(x => x.Id);
+            Id(x => x.Id).GeneratedBy.GuidComb();
             Map(x => x.FirstName);
             Map(x => x.LastName);
             References(x => x.Store);
