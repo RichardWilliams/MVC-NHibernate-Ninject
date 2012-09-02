@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using Core;
+using Core.NHibernate;
+using Ninject.Modules;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MvcApplication1.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(MvcApplication1.App_Start.NinjectWebCommon), "Stop")]
+
 
 namespace MvcApplication1.App_Start
 {
@@ -56,6 +60,7 @@ namespace MvcApplication1.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ILog>().To<Log>();
+            kernel.Load(new List<INinjectModule> { new NHibernateModule() });
         }        
     }
 }

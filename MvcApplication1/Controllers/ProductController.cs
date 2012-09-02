@@ -1,18 +1,26 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
+using DomainModel;
+using MvcApplication1.Extensions;
 using MvcApplication1.Models;
+using NHibernate;
 
 namespace MvcApplication1.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly ISession _session;
+
+        public ProductController(ISession session)
+        {
+            _session = session;
+        }
+
         public ActionResult Index()
         {
-            var productViewModel1 = new ProductViewModel(1, "Product1", 10);
-            var productViewModel2 = new ProductViewModel(2, "Product2", 20);
-            var productViewModel3 = new ProductViewModel(3, "Product3", 30);
-            var productViewModels = new ProductsViewModel(new List<ProductViewModel>{productViewModel1, productViewModel2, productViewModel3});
-            return View(productViewModels);
+            var products = _session.CreateCriteria<Product>().List<Product>();
+
+            return this.AutoMapView<IEnumerable<Product>, IEnumerable<ProductViewModel>>(View(), products);
         }
     }
 }
