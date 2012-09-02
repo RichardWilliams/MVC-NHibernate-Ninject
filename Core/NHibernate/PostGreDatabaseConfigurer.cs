@@ -4,7 +4,7 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace Core.NHibernate
 {
-    public class PostGreDatabaseConfigurer : IDatabaseConfigurer
+    public class PostgreDatabaseConfigurer : IDatabaseConfigurer
     {
         public IPersistenceConfigurer Configurer()
         {

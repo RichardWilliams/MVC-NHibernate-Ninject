@@ -11,6 +11,10 @@ MVC 4
 Database
 --------
 I have set this up with PostgreSQL db so you will have to install Postgre. 
+Create a database called "MVCApp1", a Login Role "mvcuser" with a password "mvcpassword",
+with a right that can create database objects. Or if you would like to change 
+these then you can update the connection string in the PostgreDatabaseConfigurer.
+ 
 Or you can easily change to the database of your choice that NHibernate supports.
 All you will need to do is create an implementation of IDatabaseConfigurer (take a look at PostGreDatabaseConfigurer).
 Also you will need to modify the Ninject binding of IDatabaseConfigurer to bind to your implementation of the interface,
