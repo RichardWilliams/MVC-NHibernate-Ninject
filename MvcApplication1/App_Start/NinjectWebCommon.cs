@@ -48,7 +48,7 @@ namespace MvcApplication1.App_Start
             var kernel = new StandardKernel();
             kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-            
+
             RegisterServices(kernel);
             return kernel;
         }
@@ -60,7 +60,7 @@ namespace MvcApplication1.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ILog>().To<Log>();
-            kernel.Load(new List<INinjectModule> { new NHibernateModule() });
+            kernel.Load(new List<INinjectModule> { new NHibernateModule(), new MVCApplicationModule() });
         }        
     }
 }

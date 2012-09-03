@@ -1,0 +1,24 @@
+﻿@model MvcApplication1.Models.ShowAddViewModel
+
+@{
+  ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+
+@using (Html.BeginForm("SaveProduct", "Product"))
+{
+    <fieldset>
+        <ol>
+            <li>
+                @Html.LabelFor(x => x.Name)
+                @Html.EditorFor(x => x.Name)
+            </li>
+            <li>
+                @Html.LabelFor(x => x.Price)
+                @Html.EditorFor(x => x.Price)
+            </li>
+        </ol>
+        <input type="submit" value="SaveProduct"/>
+    </fieldset>
+}

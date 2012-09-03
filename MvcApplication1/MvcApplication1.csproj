@@ -178,9 +178,11 @@
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MVCApplicationModule.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\TransactionAttribute.cs" />
     <Compile Include="AutoMappings\AutoMapperConfig.cs" />
     <Compile Include="AutoMappings\AutoMapViewResult.cs" />
     <Compile Include="AutoMappings\DomainModelToViewModelAutoMappings.cs" />
@@ -189,11 +191,14 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Filters\TransactionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\SaveProductViewModel.cs" />
+    <Compile Include="Models\ShowAddViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Product\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\ShowAdd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

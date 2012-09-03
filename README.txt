@@ -10,6 +10,10 @@ MVC 4
 
 Database
 --------
+Take care here as the NHibernate SessionFactory creation will remove your current database everytime it is run.
+This will happen for every call to SessionFactory. This is most certainly not ideal for a live site and probably
+should be managed via a different mechanism.
+
 I have set this up with PostgreSQL db so you will have to install Postgre. 
 Create a database called "MVCApp1", a Login Role "mvcuser" with a password "mvcpassword",
 with a right that can create database objects. Or if you would like to change 
@@ -44,4 +48,9 @@ I have also decided not to go with using a Repository pattern as I also believe 
 various others, and a past experience of using it, that it is limiting the API of NHibernate to be able to make optimal
 calls to the database. Maybe if there was no NHibernate, then it would be more useful. So you will see a plain call
 in the ProductController.Index on the session to retrieve all the products.
+
+Transactions are also controlled via Ninject, where the TransactionAttribute is added to the methods that require access
+to the database. Ninject will then bind the TransactionFilter to this method/action.
+
+Logging can also be setup the same way as Transactions are, I have not done this yet.
 
