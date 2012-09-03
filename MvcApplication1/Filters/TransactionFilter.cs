@@ -20,6 +20,10 @@ namespace MvcApplication1.Filters
 
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
+            var transaction = _session.Transaction;
+            if (transaction == null) return;
+            if (!transaction.IsActive) return;
+
             if (filterContext.Exception != null)
                 _session.Transaction.Rollback();
             else
