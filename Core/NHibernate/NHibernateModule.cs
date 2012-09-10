@@ -11,7 +11,7 @@ namespace Core.NHibernate
         {
             //NOTE: Change this "To" if you want to use a different database, there is a configurer for SQlite and Postgre.
             //TODO: This could possibly be set up so its configurable from the configuration file, so it binds to the correct database configurer.
-            Bind<IDatabaseConfigurer>().To<PostgreDatabaseConfigurer>();
+            Bind<IDatabaseConfigurer>().To<SqlCompactConfigurer>();
             Bind<INHibernateBuilder>().To<NHibernateBuilder>().InSingletonScope();
             Bind<ISessionFactory>().ToMethod(context => context.Kernel.Get<INHibernateBuilder>().CreateSessionFactory()).InSingletonScope();
             Bind<ISession>().ToMethod(context => context.Kernel.Get<ISessionFactory>().OpenSession()).InRequestScope();
