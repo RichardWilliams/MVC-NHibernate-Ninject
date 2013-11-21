@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Core;
 using Core.NHibernate;
 using Ninject.Modules;
 
@@ -19,7 +18,7 @@ namespace MvcApplication1.App_Start
 
     public static class NinjectWebCommon 
     {
-        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
+        private static readonly Bootstrapper Bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
@@ -28,7 +27,7 @@ namespace MvcApplication1.App_Start
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
-            bootstrapper.Initialize(CreateKernel);
+            Bootstrapper.Initialize(CreateKernel);
         }
         
         /// <summary>
@@ -36,7 +35,7 @@ namespace MvcApplication1.App_Start
         /// </summary>
         public static void Stop()
         {
-            bootstrapper.ShutDown();
+            Bootstrapper.ShutDown();
         }
         
         /// <summary>
@@ -59,8 +58,8 @@ namespace MvcApplication1.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ILog>().To<Log>();
-            kernel.Load(new List<INinjectModule> { new NHibernateModule(), new MVCApplicationModule() });
+            kernel.Load(new List<INinjectModule> { new NHibernateModule(), new MVCApplicationModule()});
+            log4net.Config.XmlConfigurator.Configure();
         }        
     }
 }

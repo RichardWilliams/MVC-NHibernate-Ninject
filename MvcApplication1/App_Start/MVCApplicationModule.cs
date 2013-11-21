@@ -10,8 +10,7 @@ namespace MvcApplication1.App_Start
     {
         public override void Load()
         {
-            Kernel.BindFilter<TransactionFilter>(FilterScope.Action, 0)
-                .WhenActionMethodHas<TransactionAttribute>();
+            Kernel.BindFilter<TransactionFilter>(FilterScope.Action, 0).WhenActionMethodHas<TransactionAttribute>();
         }
     }
 }

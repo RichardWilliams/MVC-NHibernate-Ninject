@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Core;
+﻿using System.Web.Mvc;
+using Ninject.Extensions.Logging;
 
 namespace MvcApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILog _log;
+        private readonly ILogger _logger;
 
-        public HomeController(ILog log)
+        public HomeController(ILogger logger)
         {
-            _log = log;
+            _logger = logger;
         }
 
         public ActionResult Index()
         {
             //ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            ViewBag.Message = _log.HelloWorld();
-
+            ViewBag.Message = "Hi there, here we go!";
+            _logger.Debug("Test logging, index of HomeController");
             return View();
         }
 

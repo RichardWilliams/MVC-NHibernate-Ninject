@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -75,8 +75,6 @@
     <Compile Include="NHibernate\IDatabaseConfigurer.cs" />
     <Compile Include="NHibernate\INHibernateBuilder.cs" />
     <Compile Include="NHibernate\NHibernateModule.cs" />
-    <Compile Include="ILog.cs" />
-    <Compile Include="Log.cs" />
     <Compile Include="Mappings\EmployeeMap.cs" />
     <Compile Include="Mappings\ProductMap.cs" />
     <Compile Include="Mappings\StoreMap.cs" />
