@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcApplication1\MvcApplication1.csproj", "{92921440-9B2F-4CDB-A2FE-3319A80418D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{E253FE2E-F4E6-47D9-917E-5686F9295B8D}"
@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		README.txt = README.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication.Tests", "MvcApplication.Tests\MvcApplication.Tests.csproj", "{2801E5F5-0D05-496A-BEFD-7648D90372A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{BD02F400-3C36-46D3-B0EC-606F52D06CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD02F400-3C36-46D3-B0EC-606F52D06CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD02F400-3C36-46D3-B0EC-606F52D06CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2801E5F5-0D05-496A-BEFD-7648D90372A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2801E5F5-0D05-496A-BEFD-7648D90372A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2801E5F5-0D05-496A-BEFD-7648D90372A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2801E5F5-0D05-496A-BEFD-7648D90372A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
