@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
+using AutoMapper;
 using DomainModel;
 using MvcApplication1.Attributes;
 using MvcApplication1.Extensions;
@@ -33,8 +34,7 @@ namespace MvcApplication1.Controllers
         [Transaction]
         public ActionResult SaveProduct(SaveProductViewModel saveProductViewModel)
         {
-            //TODO: Need to create a mapper for this. Also a filter to add a transaction.
-            _session.Save(new Product {Name = saveProductViewModel.Name, Price = saveProductViewModel.Price});
+            _session.Save(Mapper.Map<SaveProductViewModel, Product>(saveProductViewModel));
 
             return RedirectToAction("Index");
         }

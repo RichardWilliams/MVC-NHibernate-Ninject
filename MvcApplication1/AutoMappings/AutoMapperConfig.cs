@@ -5,6 +5,7 @@ namespace MvcApplication1.AutoMappings
         public static void Register()
         {
             new DomainModelToViewModelAutoMappings().Configure();
+            new ViewModelToDomainModelAutoMappings().Configure();
         }
     }
 }

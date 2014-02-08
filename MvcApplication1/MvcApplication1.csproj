@@ -203,6 +203,7 @@
     <Compile Include="AutoMappings\AutoMapperConfig.cs" />
     <Compile Include="AutoMappings\AutoMapViewResult.cs" />
     <Compile Include="AutoMappings\DomainModelToViewModelAutoMappings.cs" />
+    <Compile Include="AutoMappings\ViewModelToDomainModelAutoMappings.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
