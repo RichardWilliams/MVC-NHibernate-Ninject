@@ -204,11 +204,13 @@
     <Compile Include="AutoMappings\AutoMapViewResult.cs" />
     <Compile Include="AutoMappings\DomainModelToViewModelAutoMappings.cs" />
     <Compile Include="AutoMappings\ViewModelToDomainModelAutoMappings.cs" />
+    <Compile Include="Common\IHaveALogger.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Filters\LoggingFilterAttribute.cs" />
     <Compile Include="Filters\TransactionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

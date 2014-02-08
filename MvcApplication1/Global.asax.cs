@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MvcApplication1.App_Start;
 using MvcApplication1.AutoMappings;
 using NHibernate;
 using Ninject;

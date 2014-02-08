@@ -5,6 +5,7 @@ using MvcApplication1.AutoMappings;
 using MvcApplication1.Controllers;
 using MvcApplication1.Models;
 using NHibernate;
+using Ninject.Extensions.Logging;
 using Xunit;
 
 namespace MvcApplication.Tests
@@ -15,7 +16,8 @@ namespace MvcApplication.Tests
         public void Index_Then_View_Is_AutoMapView_Of_EnumearbleProduct_To_EnumerableProductViewModel()
         {
             //ARRANGE
-            var productController = new ProductController(SessionProducts());
+            var mockedLogger = new Mock<ILogger>();
+            var productController = new ProductController(SessionProducts(), mockedLogger.Object);
 
             //ACT
             var view = productController.Index();

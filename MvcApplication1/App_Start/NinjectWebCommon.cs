@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Core.NHibernate;
+using Ninject.Extensions.Logging.Log4net;
 using Ninject.Modules;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MvcApplication1.App_Start.NinjectWebCommon), "Start")]
