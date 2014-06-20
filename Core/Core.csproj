@@ -80,6 +80,7 @@
     <Compile Include="Mappings\StoreMap.cs" />
     <Compile Include="NHibernate\NHibernateBuilder.cs" />
     <Compile Include="NHibernate\PostgreDatabaseConfigurer.cs" />
+    <Compile Include="NHibernate\Sql2008Configurer.cs" />
     <Compile Include="NHibernate\SqlCompactConfigurer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NHibernate\SQliteDatabaseConfigurer.cs" />
