@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using Core.NHibernate;
 using Ninject.Extensions.Logging.Log4net;
 using Ninject.Modules;
@@ -62,7 +63,8 @@ namespace MvcApplication1.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             var databaseConfigurer = ConfigurationManager.AppSettings.GetValues("DatabaseConfigurer");
-            var databaseConfigurerType = Type.GetType(databaseConfigurer.First());
+            var assemblyQualifiedName = Assembly.CreateQualifiedName("Core", "Core.NHibernate." + databaseConfigurer.First());
+            var databaseConfigurerType = Type.GetType(assemblyQualifiedName);
             kernel.Load(new List<INinjectModule> { new NHibernateModule(databaseConfigurerType), new MVCApplicationModule() });
             log4net.Config.XmlConfigurator.Configure();
         }        
