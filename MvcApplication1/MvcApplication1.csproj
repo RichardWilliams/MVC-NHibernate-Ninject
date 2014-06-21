@@ -345,6 +345,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\PublishProfiles\azure.publishsettings" />
     <None Include="Properties\PublishProfiles\mvcapplication1-silverfox - TeamCIty.pubxml" />
     <None Include="Properties\PublishProfiles\mvcapplication1-silverfox.pubxml" />
   </ItemGroup>
